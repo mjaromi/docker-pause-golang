@@ -1,0 +1,13 @@
+FROM golang:1.15-alpine3.12
+
+LABEL maintainer='mateusz.jaromi@gmail.com'
+
+COPY pause.go .
+
+RUN go build pause.go
+
+FROM alpine:3.12
+
+COPY --from=0 /go/pause /usr/bin/pause
+
+ENTRYPOINT [ "pause" ]
