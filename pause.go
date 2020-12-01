@@ -5,5 +5,5 @@ func main() {
 }
 
 func pause() {
-	for{}
+	for {}
 }
