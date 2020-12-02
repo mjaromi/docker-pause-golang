@@ -1,5 +1,14 @@
 # docker-pause-golang
 
+## intro
+
+There are some cases that you have to start a docker container, execute a single or multiple commands and stop a docker container. There are several ways in which you can achieve that.
+
+* you can build separate image just to execute specific command,
+* you can use the same image and just simple override `entrypoint` and `cmd`,
+* you can run your docker image with entrypoint set to `sleep` for example: `sleep 99999` or `sleep infinity`,
+* you can run your docker image with entrypoint set to `pause` like in following case
+
 ## example based on oryd/hydra
 
 Since ORY Hydra 0.8.0, migrations are no longer run automatically on boot and sometimes you need to initialize the database schemas and this required to run `hydra migrate sql ${PSQL_URL}` command.
