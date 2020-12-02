@@ -33,7 +33,13 @@ ENTRYPOINT [ "pause" ]
 ```shell
 docker build -t hydra-pause:latest .
 docker run -dit hydra-pause:latest
+
+on windows:
 docker exec -it $(docker ps -aq | select -f 1) sh
+
+on linux:
+docker exec -it $(docker ps -aq | head -1) sh
+
 / # hydra migrate sql ${PSQL_URL}
 ```
 
