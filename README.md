@@ -8,6 +8,11 @@ There are some cases that you have to start a docker container, execute a single
 * you can use the same image and just simple override `entrypoint` and `cmd`,
 * you can run your docker image with entrypoint set to `sleep` for example: `sleep 99999` or `sleep infinity`,
 * you can run your docker image with entrypoint set to `pause` like in following case
+* in AWS ECS you can run scheduled tasks (cron) [2]
+* in AWS ECS you can define separate task definition and run task on demand, which will run provided command, for example:
+```shell
+aws ecs run-task --cluster $AWS_ECS_CLUSTER_NAME --task-definition $AWS_ECS_TASK_DEFINITION
+```
 
 ## example based on oryd/hydra
 
@@ -45,3 +50,4 @@ docker exec -it $(docker ps -aq | head -1) sh
 
 ## docs
 [1] https://github.com/ory/hydra/blob/ddd781bd5e9c545423b64601b5d8252c4faca18e/docs/faq/migrations.md
+[2] https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduled_tasks.html
