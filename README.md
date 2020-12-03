@@ -50,4 +50,5 @@ docker exec -it $(docker ps -aq | head -1) sh
 
 ## docs
 [1] https://github.com/ory/hydra/blob/ddd781bd5e9c545423b64601b5d8252c4faca18e/docs/faq/migrations.md
+
 [2] https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduled_tasks.html
